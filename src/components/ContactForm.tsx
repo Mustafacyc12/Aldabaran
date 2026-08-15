@@ -33,7 +33,7 @@ export default function ContactForm() {
     ];
     const body = encodeURIComponent(bodyLines.join("\n"));
     setShowSuccess(true);
-    window.location.href = `mailto:info@aldabarantrading.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@aldabaran.co?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -82,7 +82,7 @@ export default function ContactForm() {
       </button>
       <p className="form-note">
         This opens your email client with your message pre-filled to
-        info@aldabarantrading.com.
+        info@aldabaran.co.
       </p>
       <div className={`form-success${showSuccess ? " show" : ""}`}>
         Thanks — your email client should now be open with your message ready

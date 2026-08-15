@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import LogoMark from "@/components/LogoMark";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -28,7 +29,8 @@ export default function Nav() {
   return (
     <nav ref={navRef} id="nav">
       <Link href="/" className="brandmark">
-        <span className="dot"></span>AL&nbsp;DABARAN&nbsp;TRADING
+        <LogoMark size={24} />
+        Al&nbsp;Dabaran
       </Link>
       <div className="nav-links">
         {LINKS.map((link) => (

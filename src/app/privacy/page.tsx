@@ -88,7 +88,7 @@ export default function Privacy() {
           <p>
             If you have questions about this Privacy Policy or how we handle
             your information, please contact us at{" "}
-            <a href="mailto:info@aldabarantrading.com">info@aldabarantrading.com</a>{" "}
+            <a href="mailto:info@aldabaran.co">info@aldabaran.co</a>{" "}
             or via our <a href="/contact">contact page</a>.
           </p>
         </div>

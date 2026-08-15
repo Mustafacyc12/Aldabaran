@@ -94,7 +94,7 @@ export default function Terms() {
           <h2>11. Contact Us</h2>
           <p>
             Questions about these Terms of Use can be sent to{" "}
-            <a href="mailto:info@aldabarantrading.com">info@aldabarantrading.com</a>{" "}
+            <a href="mailto:info@aldabaran.co">info@aldabaran.co</a>{" "}
             or via our <a href="/contact">contact page</a>.
           </p>
         </div>
