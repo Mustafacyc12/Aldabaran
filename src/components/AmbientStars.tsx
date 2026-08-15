@@ -14,7 +14,7 @@ export default function AmbientStars() {
   const [stars, setStars] = useState<Star[] | null>(null);
 
   useEffect(() => {
-    const count = 46;
+    const count = window.innerWidth < 640 ? 22 : 46;
     const next: Star[] = [];
     for (let i = 0; i < count; i++) {
       next.push({

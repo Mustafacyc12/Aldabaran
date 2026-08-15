@@ -12,13 +12,16 @@ export default function Starfield() {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+    const isSmallViewport = window.innerWidth < 640;
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
     const W = 1400;
     const H = 900;
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
 
+    const starCount = isSmallViewport ? 70 : 170;
     let bg = "";
-    for (let i = 0; i < 170; i++) {
+    for (let i = 0; i < starCount; i++) {
       const x = Math.random() * W;
       const y = Math.random() * H;
       const r = Math.random() * 1.1 + 0.3;
@@ -97,7 +100,7 @@ export default function Starfield() {
 
     svg.innerHTML = bg + trail + constellationLines + pleiadesStars + hyadesStars + aldebaran;
 
-    if (reduceMotion) return;
+    if (reduceMotion || !canHover) return;
 
     const heroEl = svg.closest(".hero") as HTMLElement | null;
     if (!heroEl) return;

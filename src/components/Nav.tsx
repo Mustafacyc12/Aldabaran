@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import LogoMark from "@/components/LogoMark";
 
 const LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Home", hideOnMobile: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact →" },
 ];
@@ -37,7 +37,9 @@ export default function Nav() {
           <Link
             key={link.href}
             href={link.href}
-            className={`navlink${pathname === link.href ? " active" : ""}`}
+            className={`navlink${pathname === link.href ? " active" : ""}${
+              link.hideOnMobile ? " navlink-hide-mobile" : ""
+            }`}
           >
             {link.label}
           </Link>
