@@ -12,14 +12,18 @@ export default function Starfield() {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    const isSmallViewport = window.innerWidth < 640;
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
     const W = 1400;
     const H = 900;
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
 
-    const starCount = isSmallViewport ? 70 : 170;
+    // preserveAspectRatio="xMidYMid slice" crops hard on narrow/tall mobile
+    // viewports (only ~30% of the 1400-wide viewBox stays visible), so the
+    // star count must stay high enough that a dense-looking field survives
+    // that crop -- CSS opacity keyframes (unlike the old SMIL approach) are
+    // compositor-only and cheap, so there's no perf reason to thin this out.
+    const starCount = 170;
     let bg = "";
     for (let i = 0; i < starCount; i++) {
       const x = Math.random() * W;
