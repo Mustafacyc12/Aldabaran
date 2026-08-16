@@ -89,6 +89,43 @@ a {
     opacity: calc(var(--o, 0.5) * 0.15);
   }
 }
+#starfield .sf-twinkle {
+  animation-name: sfTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes sfTwinkle {
+  0%,
+  100% {
+    opacity: var(--sf-o, 0.4);
+  }
+  50% {
+    opacity: calc(var(--sf-o, 0.4) * 0.25);
+  }
+}
+#starfield .sf-trail {
+  animation: sfTrailDraw 2.4s cubic-bezier(0.16, 0.8, 0.24, 1) 0.6s forwards;
+}
+@keyframes sfTrailDraw {
+  from {
+    stroke-dashoffset: var(--sf-len, 0);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+#starfield .sf-pulse {
+  animation: sfPulse 4s ease-in-out infinite;
+}
+@keyframes sfPulse {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 .hero,
 .course,
 footer,

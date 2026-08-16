@@ -26,21 +26,15 @@ export default function Starfield() {
       const y = Math.random() * H;
       const r = Math.random() * 1.1 + 0.3;
       const o = Math.random() * 0.5 + 0.15;
-      const twinkleDelay = (Math.random() * 6).toFixed(2);
-      bg +=
-        `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(
-          2
-        )}" fill="#f6efe0" opacity="${o.toFixed(2)}">` +
-        (reduceMotion
-          ? ""
-          : `<animate attributeName="opacity" values="${o.toFixed(
-              2
-            )};${(o * 0.25).toFixed(2)};${o.toFixed(
-              2
-            )}" dur="${(4 + Math.random() * 4).toFixed(
-              1
-            )}s" begin="${twinkleDelay}s" repeatCount="indefinite"/>`) +
-        `</circle>`;
+      const dur = (4 + Math.random() * 4).toFixed(1);
+      const delay = (Math.random() * 6).toFixed(2);
+      const cls = reduceMotion ? "" : ' class="sf-twinkle"';
+      const style = reduceMotion
+        ? ""
+        : ` style="--sf-o:${o.toFixed(2)};animation-duration:${dur}s;animation-delay:${delay}s;"`;
+      bg += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(
+        2
+      )}" fill="#f6efe0" opacity="${o.toFixed(2)}"${cls}${style}></circle>`;
     }
 
     const pleiades = [
@@ -77,25 +71,19 @@ export default function Starfield() {
     }
 
     const trailLen = Math.hypot(aldebaranPos[0] - 250, aldebaranPos[1] - 170);
-    const trail =
-      `<line x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" stroke-dasharray="${trailLen}" stroke-dashoffset="${
-        reduceMotion ? 0 : trailLen
-      }" opacity="0.45">` +
-      (reduceMotion
-        ? ""
-        : `<animate attributeName="stroke-dashoffset" from="${trailLen}" to="0" dur="2.4s" begin="0.6s" fill="freeze" calcMode="spline" keySplines="0.16 0.8 0.24 1"/>`) +
-      `</line>`;
+    const trail = reduceMotion
+      ? `<line x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" opacity="0.45"/>`
+      : `<line x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" opacity="0.45" class="sf-trail" style="--sf-len:${trailLen};stroke-dasharray:${trailLen};"/>`;
 
     const constellationLines = lines(hyades, "#b8925a", 0.35);
     const pleiadesStars = cluster(pleiades, 1.4, 0.7);
     const hyadesStars = cluster(hyades, 1.6, 0.75);
 
+    const aldebaranCoreCls = reduceMotion ? "" : ' class="sf-pulse"';
     const aldebaran = `
       <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="16" fill="#e08a3c" opacity="0.12"/>
       <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="9" fill="#e08a3c" opacity="0.22"/>
-      <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="3.4" fill="#f4b16a">
-        ${reduceMotion ? "" : '<animate attributeName="opacity" values="0.75;1;0.75" dur="4s" repeatCount="indefinite"/>'}
-      </circle>
+      <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="3.4" fill="#f4b16a"${aldebaranCoreCls}></circle>
     `;
 
     svg.innerHTML = bg + trail + constellationLines + pleiadesStars + hyadesStars + aldebaran;
