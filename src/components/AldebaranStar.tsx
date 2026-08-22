@@ -53,12 +53,13 @@ export default function AldebaranStar({ size = 220, className = '' }: AldebaranS
           className="aldebaran-star__bloom"
         />
 
-        {/* main horizontal spike. (The vertical counterpart, the long
-            diagonal, and the two short diagonal accents were all removed --
-            each one spans the full width through the center, so split by
-            the bright core it read as two separate lines running out into
-            the surrounding text and made the hero feel crowded/cluttered.) */}
+        {/* horizontal + vertical cross. (The long diagonal and the two short
+            diagonal accents were removed -- each spanned the full width
+            through the center, so split by the bright core they read as
+            separate lines running out into the surrounding text and made
+            the hero feel crowded. The plain cross reads cleaner on its own.) */}
         <rect x="0" y="109" width="220" height="2.2" fill="url(#spikeMain)" className="aldebaran-star__spike" />
+        <rect x="109" y="0" width="2.2" height="220" fill="url(#spikeMain)" className="aldebaran-star__spike" />
 
         {/* bright core */}
         <circle cx="110" cy="110" r="4.2" fill="#fffaf0" className="aldebaran-star__core" />
