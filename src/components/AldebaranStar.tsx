@@ -42,11 +42,6 @@ export default function AldebaranStar({ size = 220, className = '' }: AldebaranS
             <stop offset="52%" stopColor="#fff2dd" stopOpacity="0.95" />
             <stop offset="100%" stopColor="#f4b16a" stopOpacity="0" />
           </linearGradient>
-          <linearGradient id="spikeMinor" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#f4b16a" stopOpacity="0" />
-            <stop offset="50%" stopColor="#ffe6bd" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#f4b16a" stopOpacity="0" />
-          </linearGradient>
         </defs>
 
         {/* soft bloom */}
@@ -58,42 +53,12 @@ export default function AldebaranStar({ size = 220, className = '' }: AldebaranS
           className="aldebaran-star__bloom"
         />
 
-        {/* long diagonal spike, echoing the reference photo */}
-        <rect
-          x="0"
-          y="109"
-          width="220"
-          height="1.6"
-          fill="url(#spikeMinor)"
-          transform="rotate(-38 110 110)"
-          className="aldebaran-star__spike aldebaran-star__spike--slow"
-        />
-
-        {/* main horizontal spike. (The vertical counterpart was removed --
-            split by the bright core into two segments, it read as a
-            mirrored "reflection" running through the text above and below
-            the star and made the hero feel crowded.) */}
+        {/* main horizontal spike. (The vertical counterpart, the long
+            diagonal, and the two short diagonal accents were all removed --
+            each one spans the full width through the center, so split by
+            the bright core it read as two separate lines running out into
+            the surrounding text and made the hero feel crowded/cluttered.) */}
         <rect x="0" y="109" width="220" height="2.2" fill="url(#spikeMain)" className="aldebaran-star__spike" />
-
-        {/* short diagonal accents */}
-        <rect
-          x="30"
-          y="109.4"
-          width="160"
-          height="1"
-          fill="url(#spikeMinor)"
-          transform="rotate(45 110 110)"
-          className="aldebaran-star__spike aldebaran-star__spike--fast"
-        />
-        <rect
-          x="30"
-          y="109.4"
-          width="160"
-          height="1"
-          fill="url(#spikeMinor)"
-          transform="rotate(-45 110 110)"
-          className="aldebaran-star__spike aldebaran-star__spike--fast"
-        />
 
         {/* bright core */}
         <circle cx="110" cy="110" r="4.2" fill="#fffaf0" className="aldebaran-star__core" />
@@ -119,14 +84,6 @@ export default function AldebaranStar({ size = 220, className = '' }: AldebaranS
         .aldebaran-star__spike {
           transform-origin: 110px 110px;
           animation: aldebaranSpike 4.5s ease-in-out infinite;
-        }
-        .aldebaran-star__spike--fast {
-          animation-duration: 3.1s;
-          animation-delay: 0.4s;
-        }
-        .aldebaran-star__spike--slow {
-          animation-duration: 6.5s;
-          animation-delay: 0.8s;
         }
         @keyframes aldebaranBloom {
           0%,
