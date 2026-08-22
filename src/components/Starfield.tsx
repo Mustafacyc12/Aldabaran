@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import {
-  ALDEBARAN_POS,
+  getAldebaranPos,
   STARFIELD_VIEWBOX_H,
   STARFIELD_VIEWBOX_W,
 } from "@/lib/starfieldConstants";
@@ -62,7 +62,7 @@ export default function Starfield() {
       [560, 300],
       [610, 360],
     ];
-    const aldebaranPos = ALDEBARAN_POS;
+    const aldebaranPos = getAldebaranPos(window.innerWidth);
 
     function cluster(points: number[][], r = 1.6, op = 0.85) {
       return points
@@ -81,8 +81,8 @@ export default function Starfield() {
 
     const trailLen = Math.hypot(aldebaranPos[0] - 250, aldebaranPos[1] - 170);
     const trail = reduceMotion
-      ? `<line x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" opacity="0.45"/>`
-      : `<line x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" opacity="0.45" class="sf-trail" style="--sf-len:${trailLen};stroke-dasharray:${trailLen};"/>`;
+      ? `<line id="sfTrail" x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" opacity="0.45"/>`
+      : `<line id="sfTrail" x1="250" y1="170" x2="${aldebaranPos[0]}" y2="${aldebaranPos[1]}" stroke="#b8925a" stroke-width="1" opacity="0.45" class="sf-trail" style="--sf-len:${trailLen};stroke-dasharray:${trailLen};"/>`;
 
     const constellationLines = lines(hyades, "#b8925a", 0.35);
     const pleiadesStars = cluster(pleiades, 1.4, 0.7);
@@ -93,10 +93,32 @@ export default function Starfield() {
     // directly on top -- see that component for why.
     svg.innerHTML = bg + trail + constellationLines + pleiadesStars + hyadesStars;
 
-    if (reduceMotion || !canHover) return;
+    // The star's own position (AldebaranStarLayer) is breakpoint-dependent
+    // (see getAldebaranPos), so the trail line has to be kept in sync on
+    // resize -- otherwise it'd keep pointing at the coordinate picked at
+    // mount time instead of tracking the current breakpoint's star.
+    const onResize = () => {
+      const trailEl = svg.querySelector("#sfTrail");
+      if (!trailEl) return;
+      const [tx, ty] = getAldebaranPos(window.innerWidth);
+      trailEl.setAttribute("x2", String(tx));
+      trailEl.setAttribute("y2", String(ty));
+      if (!reduceMotion) {
+        const len = Math.hypot(tx - 250, ty - 170);
+        (trailEl as SVGLineElement).style.setProperty("--sf-len", String(len));
+        trailEl.setAttribute("stroke-dasharray", String(len));
+      }
+    };
+    window.addEventListener("resize", onResize);
+
+    if (reduceMotion || !canHover) {
+      return () => window.removeEventListener("resize", onResize);
+    }
 
     const heroEl = svg.closest(".hero") as HTMLElement | null;
-    if (!heroEl) return;
+    if (!heroEl) {
+      return () => window.removeEventListener("resize", onResize);
+    }
 
     const onMouseMove = (e: MouseEvent) => {
       const r = heroEl.getBoundingClientRect();
@@ -109,7 +131,10 @@ export default function Starfield() {
       svg.style.transform = `translate(${dx * -10}px, ${dy * -10}px)`;
     };
     heroEl.addEventListener("mousemove", onMouseMove);
-    return () => heroEl.removeEventListener("mousemove", onMouseMove);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      heroEl.removeEventListener("mousemove", onMouseMove);
+    };
   }, []);
 
   return <svg ref={svgRef} id="starfield" preserveAspectRatio="xMidYMid slice" />;

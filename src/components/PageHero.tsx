@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Starfield from "@/components/Starfield";
+import AldebaranStarLayer from "@/components/AldebaranStarLayer";
 
 export default function PageHero({
   eyebrow,
@@ -19,6 +20,7 @@ export default function PageHero({
       style={short ? { minHeight: "38vh" } : undefined}
     >
       <Starfield />
+      <AldebaranStarLayer />
       <div className="grain"></div>
       <div className="hero-content">
         <div className="eyebrow">{eyebrow}</div>

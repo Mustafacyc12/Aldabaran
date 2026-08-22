@@ -7,12 +7,20 @@ export const STARFIELD_VIEWBOX_H = 900;
 // always agree on where the star sits -- no coordinates to keep in sync by
 // hand.
 //
-// x=640 (not the original dot's x=480): measured via getScreenCTM on a
-// 375px-wide mobile viewport that preserveAspectRatio="slice" only keeps
-// viewBox x in roughly [518, 882] visible on a narrow/tall hero -- x=480
-// (where the old, much smaller dot sat) falls outside that window, so the
-// star's core was clipped off-screen entirely on phones. x=640 sits well
-// inside that band (and its 470-and-narrower worst case) with margin for
-// the star's own bloom radius, while staying close enough to the Hyades
-// cluster (x up to 610) to still read as "next to" it.
-export const ALDEBARAN_POS: [number, number] = [640, 380];
+// The client wants the star sitting on the "O" in "point" (the headline's
+// first line, "A fixed point of reference"). Because the headline reflows
+// to a different number of lines at each breakpoint (2 on desktop, 3 on
+// tablet, 4 on mobile) *and* preserveAspectRatio="slice" crops the shared
+// viewBox by a different amount at each aspect ratio, there's no single
+// (x,y) that lands on that letter at every width -- so this is a lookup
+// keyed by viewport width, not a constant. Each point below was measured
+// directly: selecting the "o" in "point" with a DOM Range, reading its
+// screen-space bounding rect, then mapping that back into viewBox space
+// via the starfield SVG's getScreenCTM().inverse(). All three sit
+// comfortably inside their breakpoint's visible (post-crop) viewBox
+// window, confirmed the same way.
+export function getAldebaranPos(viewportWidth: number): [number, number] {
+  if (viewportWidth < 640) return [710, 250]; // mobile: measured (709.8, 245.7)
+  if (viewportWidth < 1024) return [585, 385]; // tablet: measured (582.8, 382.8)
+  return [460, 355]; // desktop: measured (460.0, 352.7)
+}

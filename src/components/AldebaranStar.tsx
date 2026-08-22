@@ -69,9 +69,11 @@ export default function AldebaranStar({ size = 220, className = '' }: AldebaranS
           className="aldebaran-star__spike aldebaran-star__spike--slow"
         />
 
-        {/* main horizontal / vertical cross */}
+        {/* main horizontal spike. (The vertical counterpart was removed --
+            split by the bright core into two segments, it read as a
+            mirrored "reflection" running through the text above and below
+            the star and made the hero feel crowded.) */}
         <rect x="0" y="109" width="220" height="2.2" fill="url(#spikeMain)" className="aldebaran-star__spike" />
-        <rect x="109" y="0" width="2.2" height="220" fill="url(#spikeMain)" className="aldebaran-star__spike" />
 
         {/* short diagonal accents */}
         <rect

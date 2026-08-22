@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import AldebaranStar from "@/components/AldebaranStar";
 import {
-  ALDEBARAN_POS,
+  getAldebaranPos,
   STARFIELD_VIEWBOX_H,
   STARFIELD_VIEWBOX_W,
 } from "@/lib/starfieldConstants";
@@ -24,11 +24,13 @@ import {
 // the requested ~120-200px on mobile / ~200-240px on desktop on screen.
 export default function AldebaranStarLayer() {
   const [size, setSize] = useState(230);
+  const [pos, setPos] = useState<[number, number]>([460, 355]);
 
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
       setSize(w < 640 ? 160 : w < 1024 ? 195 : 230);
+      setPos(getAldebaranPos(w));
     };
     update();
     window.addEventListener("resize", update);
@@ -36,7 +38,7 @@ export default function AldebaranStarLayer() {
   }, []);
 
   const half = size / 2;
-  const [cx, cy] = ALDEBARAN_POS;
+  const [cx, cy] = pos;
 
   return (
     <svg
