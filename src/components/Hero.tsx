@@ -1,9 +1,11 @@
 import Starfield from "@/components/Starfield";
+import AldebaranStarLayer from "@/components/AldebaranStarLayer";
 
 export default function Hero() {
   return (
     <header className="hero" id="hero">
       <Starfield />
+      <AldebaranStarLayer />
       <div className="grain"></div>
       <div className="hero-content">
         <div className="eyebrow">Al Dabaran Trading F.Z.E. — Middle East Market Entry</div>

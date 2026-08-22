@@ -1,6 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import {
+  ALDEBARAN_POS,
+  STARFIELD_VIEWBOX_H,
+  STARFIELD_VIEWBOX_W,
+} from "@/lib/starfieldConstants";
 
 export default function Starfield() {
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -14,8 +19,8 @@ export default function Starfield() {
     ).matches;
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-    const W = 1400;
-    const H = 900;
+    const W = STARFIELD_VIEWBOX_W;
+    const H = STARFIELD_VIEWBOX_H;
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
 
     // preserveAspectRatio="xMidYMid slice" crops hard on narrow/tall mobile
@@ -57,7 +62,7 @@ export default function Starfield() {
       [560, 300],
       [610, 360],
     ];
-    const aldebaranPos = [480, 380];
+    const aldebaranPos = ALDEBARAN_POS;
 
     function cluster(points: number[][], r = 1.6, op = 0.85) {
       return points
@@ -83,14 +88,10 @@ export default function Starfield() {
     const pleiadesStars = cluster(pleiades, 1.4, 0.7);
     const hyadesStars = cluster(hyades, 1.6, 0.75);
 
-    const aldebaranCoreCls = reduceMotion ? "" : ' class="sf-pulse"';
-    const aldebaran = `
-      <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="16" fill="#e08a3c" opacity="0.12"/>
-      <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="9" fill="#e08a3c" opacity="0.22"/>
-      <circle cx="${aldebaranPos[0]}" cy="${aldebaranPos[1]}" r="3.4" fill="#f4b16a"${aldebaranCoreCls}></circle>
-    `;
-
-    svg.innerHTML = bg + trail + constellationLines + pleiadesStars + hyadesStars + aldebaran;
+    // The Aldebaran star itself is rendered by <AldebaranStarLayer>, a
+    // sibling SVG sharing this same viewBox/preserveAspectRatio, stacked
+    // directly on top -- see that component for why.
+    svg.innerHTML = bg + trail + constellationLines + pleiadesStars + hyadesStars;
 
     if (reduceMotion || !canHover) return;
 
