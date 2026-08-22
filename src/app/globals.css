@@ -13,6 +13,17 @@
   --hairline: rgba(246, 239, 224, 0.12);
 }
 
+/* Arabic uses different (native-script) font families under the same
+   custom-property names, so every rule below that references
+   var(--font-fraunces) / var(--font-work-sans) / var(--font-space-mono)
+   automatically renders in Arabic without needing Arabic-specific
+   overrides scattered throughout the file. */
+html[dir="rtl"] {
+  --font-fraunces: var(--font-arabic-heading);
+  --font-work-sans: var(--font-arabic-body);
+  --font-space-mono: var(--font-arabic-body);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -271,6 +282,39 @@ nav a.navlink.active {
   border-color: #e08a3c;
 }
 
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lang-toggle-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.lang-toggle-sep {
+  color: rgba(246, 239, 224, 0.3);
+  font-size: 11px;
+}
+.lang-toggle-btn {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(246, 239, 224, 0.55);
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.lang-toggle-btn:hover {
+  color: #f6efe0;
+}
+.lang-toggle-btn.active {
+  color: #e08a3c;
+}
+
 @media (max-width: 600px) {
   nav {
     padding: 16px 20px;
@@ -288,6 +332,10 @@ nav a.navlink.active {
   nav a.navlink {
     font-size: 10px;
     letter-spacing: 0.08em;
+  }
+  .lang-toggle-btn {
+    font-size: 10px;
+    letter-spacing: 0.05em;
   }
 }
 @media (max-width: 420px) {
@@ -1039,4 +1087,73 @@ footer a:hover {
   font-family: var(--font-space-mono), monospace;
   margin-bottom: 34px;
   display: block;
+}
+
+/* ===== RTL (Arabic) ===== =====================================
+   Flexbox and CSS Grid tracks are direction-aware by spec, so the nav,
+   footer, contact-layout, field-row, and audience-grid all mirror
+   correctly on their own. What's below are the properties that are NOT
+   direction-aware -- absolute-positioned decorative elements pinned with
+   physical left/right, and the wide letter-spacing that (built for a
+   Latin mono font) reads as broken letter-joining in Arabic script. */
+html[dir="rtl"] {
+  .eyebrow,
+  nav a.navlink,
+  .btn,
+  footer p,
+  footer a,
+  .field label,
+  .legal-updated,
+  .service-mark,
+  .scroll-cue,
+  .coords {
+    letter-spacing: 0;
+  }
+
+  .coords {
+    left: auto;
+    right: 32px;
+  }
+  .scroll-cue {
+    right: auto;
+    left: 32px;
+  }
+
+  .course-track,
+  .course-fill {
+    left: auto;
+    right: 32px;
+  }
+
+  .waypoint {
+    padding: 100px 84px 100px 0;
+  }
+  .waypoint::before {
+    left: auto;
+    right: 27px;
+  }
+
+  .pull {
+    border-left: none;
+    border-right: 2px solid var(--amber);
+    padding: 4px 22px 4px 0;
+  }
+  .pull::before {
+    left: auto;
+    right: -4.5px;
+  }
+
+  .service-list::before {
+    left: auto;
+    right: 38px;
+  }
+  .service-item:hover {
+    padding-left: 4px;
+    padding-right: 14px;
+  }
+
+  .legal-wrap ul {
+    padding-left: 0;
+    padding-right: 20px;
+  }
 }

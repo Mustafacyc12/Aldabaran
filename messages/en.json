@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "siteTitle": "Al Dabaran Trading F.Z.E. — Middle East Market Entry & Distribution",
+    "siteDescription": "Al Dabaran Trading F.Z.E. connects international manufacturers and brands with distributors, retailers, and consumers across the Middle East.",
+    "companyName": "Al Dabaran Trading F.Z.E.",
+    "titleTemplateSuffix": "Al Dabaran Trading F.Z.E."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "AL DABARAN TRADING F.Z.E.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "tagline": "A FIXED REFERENCE IN AN UNCERTAIN SEA"
+  },
+  "common": {
+    "region": "Middle East · UAE Free Zone",
+    "focus": "Market Entry & Distribution",
+    "ctaEyebrow": "Get In Touch",
+    "ctaHeading": "Ready to find your way into the Middle East?",
+    "ctaLede": "Contact us and let's chart the course together.",
+    "ctaButton": "Get In Touch",
+    "backToTop": "Back to top",
+    "backToHome": "Back to Home",
+    "companyLabel": "Company",
+    "regionLabel": "Region",
+    "focusLabel": "Focus",
+    "legalEyebrow": "Legal"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Al Dabaran Trading F.Z.E. — Middle East Market Entry",
+      "title": "A fixed point of reference<br></br>in an <em>uncertain</em> market.",
+      "lede": "We connect international manufacturers and brands with distributors, retailers, and consumers across the Middle East — steady, reliable, and focused on getting your products exactly where they need to go.",
+      "ctaPrimary": "Chart the course",
+      "ctaSecondary": "Our story"
+    },
+    "origin": {
+      "eyebrow": "Our Name",
+      "heading": "Al Dabaran — “the follower”",
+      "p1": "Our name is drawn from the star Al Dabaran — known in the West as Aldebaran — a fiery orange star marking the eye of Taurus, the Bull. For centuries it served as a guiding light for those navigating open water with no land in sight.",
+      "p2": "Before satellites and GPS, sailors crossing the sea looked to the stars to find their way home, and among the brightest guides in the night sky was Al Dabaran. Its Arabic name, <em>al-dabarān</em>, means “the follower” — so called because it rises just after the Pleiades, trailing them across the sky like a faithful companion.",
+      "pullQuote": "“To the great Arab navigators of the 15th century, among them the legendary Ahmad ibn Mājid, Al Dabaran was more than a point of light — it was a fixed reference in an uncertain sea, a way to hold a true course when the horizon offered no landmarks at all.”",
+      "p3": "When the path can be unclear — new regulations, new customs, new expectations — Al Dabaran Trading F.Z.E. acts as a steady point of reference, helping our partners navigate with confidence and arrive exactly where they intend to.",
+      "p4": "Like the star that shares our name, we don't chase the spotlight. We simply stay reliable, stay visible, and help others find their way. <link>Read more about us</link>"
+    },
+    "services": {
+      "eyebrow": "What We Do",
+      "heading": "From first introduction to lasting reach",
+      "lead": "We handle the on-the-ground work of bringing a product to market — navigating local requirements, building distribution channels, and turning a first introduction into lasting reach.",
+      "item1": {
+        "mark": "BEARING 01",
+        "title": "Market Entry & Regulatory Navigation",
+        "body": "Making sense of local requirements, customs, and expectations so your entry into the region is smooth and compliant from day one."
+      },
+      "item2": {
+        "mark": "BEARING 02",
+        "title": "Distribution Channel Development",
+        "body": "Building the on-the-ground network of distributors and retailers your product needs to reach shelves and customers across the region."
+      },
+      "item3": {
+        "mark": "BEARING 03",
+        "title": "Local Representation & Partnership",
+        "body": "Acting as your steady, reliable local partner — turning a first introduction into a lasting presence in the Middle East market."
+      }
+    },
+    "audience": {
+      "eyebrow": "Who We Serve",
+      "heading": "Every course starts somewhere",
+      "lead": "Whether you're an established brand entering a new region or a growing manufacturer looking for your first foothold in the Middle East, we act as your local partner.",
+      "card1": {
+        "eyebrow": "Established Brands",
+        "title": "Entering a new region",
+        "body": "You've proven your product elsewhere. We help you localize the approach and build the channels needed to enter the Middle East with confidence."
+      },
+      "card2": {
+        "eyebrow": "Growing Manufacturers",
+        "title": "Seeking a first foothold",
+        "body": "You're ready to expand beyond your home market. We provide the local partnership and market knowledge to secure your first foothold in the region."
+      }
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About",
+      "description": "Al Dabaran Trading F.Z.E. is a Middle East market-entry and distribution partner, built on the idea that brands need a fixed point of reference when the path ahead is unclear."
+    },
+    "hero": {
+      "eyebrow": "About Al Dabaran Trading F.Z.E.",
+      "title": "Steady, reliable, always<br></br>finding the way.",
+      "lede": "We're a Middle East market-entry and distribution partner, built on a simple idea: brands need a fixed point of reference when the path ahead is unclear."
+    },
+    "story": {
+      "eyebrow": "Our Name",
+      "heading": "Al Dabaran — “the follower”",
+      "p1": "Our name is drawn from the star Al Dabaran — known in the West as Aldebaran — a fiery orange star marking the eye of Taurus, the Bull. For centuries it served as a guiding light for those navigating open water with no land in sight.",
+      "p2": "Before satellites and GPS, sailors crossing the sea looked to the stars to find their way home, and among the brightest guides in the night sky was Al Dabaran. Its Arabic name, <em>al-dabarān</em>, means “the follower” — so called because it rises just after the Pleiades, trailing them across the sky like a faithful companion.",
+      "pullQuote": "“To the great Arab navigators of the 15th century, among them the legendary Ahmad ibn Mājid, Al Dabaran was more than a point of light — it was a fixed reference in an uncertain sea, a way to hold a true course when the horizon offered no landmarks at all.”",
+      "p3": "When the path can be unclear — new regulations, new customs, new expectations — Al Dabaran Trading F.Z.E. acts as a steady point of reference, helping our partners navigate with confidence and arrive exactly where they intend to. Like the star that shares our name, we don't chase the spotlight. We simply stay reliable, stay visible, and help others find their way."
+    },
+    "values": {
+      "eyebrow": "Our Values",
+      "heading": "What guides how we work",
+      "lead": "Three principles sit behind every partnership we take on — the same qualities that made a fixed star useful to sailors for centuries.",
+      "card1": {
+        "eyebrow": "Reliability",
+        "title": "Steady by design",
+        "body": "We do what we say, when we say it. Partners can plan around us with confidence."
+      },
+      "card2": {
+        "eyebrow": "Local Expertise",
+        "title": "Ground-level knowledge",
+        "body": "Deep, on-the-ground understanding of regulations, customs, and distribution networks across the region."
+      },
+      "card3": {
+        "eyebrow": "Long-Term Partnership",
+        "title": "Built to last",
+        "body": "We're not here for a single shipment. We build the channels that keep your products moving for years."
+      }
+    },
+    "approach": {
+      "eyebrow": "How We Work",
+      "heading": "Three steps, one course",
+      "lead": "Every partnership follows the same disciplined approach — understand, chart the path, then navigate it together.",
+      "item1": {
+        "mark": "STEP 01",
+        "title": "Understand",
+        "body": "We learn your product, your goals, and where it fits within Middle East demand before recommending a single step."
+      },
+      "item2": {
+        "mark": "STEP 02",
+        "title": "Chart the Path",
+        "body": "We map the regulatory, distribution, and partnership route specific to your product category and target markets."
+      },
+      "item3": {
+        "mark": "STEP 03",
+        "title": "Navigate Together",
+        "body": "We represent you locally and manage the relationships that keep your products reaching customers, season after season."
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Tell us about your product and where you'd like it to go. We'll help you find the way into the Middle East market."
+    },
+    "hero": {
+      "eyebrow": "Get In Touch",
+      "title": "Let's chart the course together.",
+      "lede": "Tell us about your product and where you'd like it to go. We'll help you find the way into the Middle East market."
+    },
+    "form": {
+      "eyebrow": "Send An Enquiry",
+      "heading": "Tell us about your product",
+      "nameLabel": "Full Name *",
+      "companyLabel": "Company *",
+      "emailLabel": "Work Email *",
+      "phoneLabel": "Phone",
+      "countryLabel": "Country",
+      "countryPlaceholder": "Where you're based",
+      "productLabel": "Product / Industry",
+      "messageLabel": "Message *",
+      "messagePlaceholder": "Tell us about your product and what you're looking for in the Middle East market.",
+      "submit": "Send Message",
+      "note": "This opens your email client with your message pre-filled to info@aldabaran.co.",
+      "success": "Thanks — your email client should now be open with your message ready to send. We typically respond within 1–2 business days."
+    },
+    "info": {
+      "emailLabel": "Email",
+      "regionLabel": "Region",
+      "focusLabel": "Focus",
+      "responseTimeLabel": "Response Time",
+      "responseTime": "We typically respond within 1–2 business days."
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy for Al Dabaran Trading F.Z.E."
+    },
+    "heading": "Privacy Policy",
+    "lastUpdated": "Last updated: August 2026",
+    "s1": {
+      "heading": "1. Introduction",
+      "body": "Al Dabaran Trading F.Z.E. (“we”, “us”, “our”) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect through this website, how we use it, and the choices you have."
+    },
+    "s2": {
+      "heading": "2. Information We Collect",
+      "p1": "We collect information you provide directly to us, such as when you submit an enquiry through our contact form. This may include your name, company name, email address, phone number, country, and any details you share about your product or enquiry.",
+      "p2": "We do not knowingly collect sensitive personal information, and we do not use cookies or analytics tools that track you across other websites."
+    },
+    "s3": {
+      "heading": "3. How We Use Your Information",
+      "item1": "To respond to your enquiries and communicate with you about our services",
+      "item2": "To evaluate potential partnership or distribution opportunities",
+      "item3": "To improve our website and the way we communicate with prospective partners",
+      "footer": "We do not sell, rent, or trade your personal information to third parties."
+    },
+    "s4": {
+      "heading": "4. How We Share Information",
+      "body": "We may share your information with service providers who help us operate our business (such as email providers), and where required by law or to protect our legal rights. We do not share your information with third parties for their own marketing purposes."
+    },
+    "s5": {
+      "heading": "5. Data Retention",
+      "body": "We retain enquiry information for as long as reasonably necessary to respond to you and to maintain records of our business relationships, after which it is deleted or anonymized."
+    },
+    "s6": {
+      "heading": "6. Your Rights",
+      "body": "Depending on your location, you may have the right to request access to, correction of, or deletion of your personal information. To make such a request, please contact us using the details below."
+    },
+    "s7": {
+      "heading": "7. Data Security",
+      "body": "We take reasonable technical and organizational measures to protect your information. However, no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security."
+    },
+    "s8": {
+      "heading": "8. Changes to This Policy",
+      "body": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date."
+    },
+    "s9": {
+      "heading": "9. Contact Us",
+      "body": "If you have questions about this Privacy Policy or how we handle your information, please contact us at <email>info@aldabaran.co</email> or via our <link>contact page</link>."
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms of Use",
+      "description": "Terms of Use for Al Dabaran Trading F.Z.E."
+    },
+    "heading": "Terms of Use",
+    "lastUpdated": "Last updated: August 2026",
+    "s1": {
+      "heading": "1. Acceptance of Terms",
+      "body": "By accessing or using this website, you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use this website."
+    },
+    "s2": {
+      "heading": "2. About This Website",
+      "body": "This website is operated by Al Dabaran Trading F.Z.E. and is provided to share information about our services connecting international manufacturers and brands with distributors, retailers, and consumers across the Middle East."
+    },
+    "s3": {
+      "heading": "3. Use of the Website",
+      "body": "You agree to use this website only for lawful purposes and in a way that does not infringe the rights of, or restrict or inhibit the use and enjoyment of, this website by any third party."
+    },
+    "s4": {
+      "heading": "4. Intellectual Property",
+      "body": "All content on this website, including text, graphics, logos, and design, is the property of Al Dabaran Trading F.Z.E. unless otherwise noted, and may not be reproduced, distributed, or used without our prior written consent."
+    },
+    "s5": {
+      "heading": "5. No Professional Advice",
+      "body": "Content on this website is provided for general informational purposes only and does not constitute legal, financial, or regulatory advice. You should seek independent professional advice before making decisions related to market entry, distribution, or regulatory compliance."
+    },
+    "s6": {
+      "heading": "6. Enquiries and Communications",
+      "body": "Submitting an enquiry through our contact form does not create any contractual obligation between you and Al Dabaran Trading F.Z.E. Any business relationship will only be established through a separate, signed agreement."
+    },
+    "s7": {
+      "heading": "7. Limitation of Liability",
+      "body": "To the fullest extent permitted by law, Al Dabaran Trading F.Z.E. shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website or reliance on its content."
+    },
+    "s8": {
+      "heading": "8. External Links",
+      "body": "This website may contain links to third-party websites. We are not responsible for the content or practices of any linked websites."
+    },
+    "s9": {
+      "heading": "9. Changes to These Terms",
+      "body": "We may update these Terms of Use from time to time. Continued use of the website after changes are posted constitutes acceptance of the revised terms."
+    },
+    "s10": {
+      "heading": "10. Governing Law",
+      "body": "These Terms of Use are governed by the laws of the United Arab Emirates, without regard to conflict of law principles."
+    },
+    "s11": {
+      "heading": "11. Contact Us",
+      "body": "Questions about these Terms of Use can be sent to <email>info@aldabaran.co</email> or via our <link>contact page</link>."
+    }
+  }
+}

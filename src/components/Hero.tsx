@@ -1,30 +1,31 @@
+import { useTranslations } from "next-intl";
 import Starfield from "@/components/Starfield";
 import AldebaranStarLayer from "@/components/AldebaranStarLayer";
+import { Link } from "@/i18n/navigation";
 
 export default function Hero() {
+  const t = useTranslations("home.hero");
+
   return (
     <header className="hero" id="hero">
       <Starfield />
       <AldebaranStarLayer />
       <div className="grain"></div>
       <div className="hero-content">
-        <div className="eyebrow">Al Dabaran Trading F.Z.E. — Middle East Market Entry</div>
+        <div className="eyebrow">{t("eyebrow")}</div>
         <h1>
-          A fixed point of reference
-          <br />
-          in an <em>uncertain</em> market.
+          {t.rich("title", {
+            br: () => <br />,
+            em: (chunks) => <em>{chunks}</em>,
+          })}
         </h1>
-        <p className="lede">
-          We connect international manufacturers and brands with distributors,
-          retailers, and consumers across the Middle East — steady, reliable,
-          and focused on getting your products exactly where they need to go.
-        </p>
+        <p className="lede">{t("lede")}</p>
         <div className="hero-actions">
-          <a className="btn btn-primary" href="/contact">
-            Chart the course
-          </a>
+          <Link className="btn btn-primary" href="/contact">
+            {t("ctaPrimary")}
+          </Link>
           <a className="btn btn-ghost" href="#origin">
-            Our story ↓
+            {t("ctaSecondary")} ↓
           </a>
         </div>
       </div>

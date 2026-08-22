@@ -1,15 +1,17 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   const year = new Date().getFullYear();
   return (
     <footer>
-      <p>&copy; {year} AL DABARAN TRADING F.Z.E.</p>
+      <p>&copy; {year} {t("copyright")}</p>
       <div className="foot-links">
-        <Link href="/privacy">Privacy Policy</Link>
-        <Link href="/terms">Terms of Use</Link>
+        <Link href="/privacy">{t("privacy")}</Link>
+        <Link href="/terms">{t("terms")}</Link>
       </div>
-      <p>A FIXED REFERENCE IN AN UNCERTAIN SEA</p>
+      <p>{t("tagline")}</p>
     </footer>
   );
 }

@@ -1,19 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useEffect, useRef } from "react";
 import LogoMark from "@/components/LogoMark";
-
-const LINKS = [
-  { href: "/", label: "Home", hideOnMobile: true },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact →" },
-];
+import LanguageToggle from "@/components/LanguageToggle";
 
 export default function Nav() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const pathname = usePathname();
   const navRef = useRef<HTMLElement | null>(null);
+
+  const LINKS = [
+    { href: "/", label: t("home"), hideOnMobile: true },
+    { href: "/about", label: t("about") },
+    { href: "/contact", label: `${t("contact")} ${isRtl ? "←" : "→"}` },
+  ];
 
   useEffect(() => {
     const nav = navRef.current;
@@ -44,6 +48,7 @@ export default function Nav() {
             {link.label}
           </Link>
         ))}
+        <LanguageToggle />
       </div>
     </nav>
   );

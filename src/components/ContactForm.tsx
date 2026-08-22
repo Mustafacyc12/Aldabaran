@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+  const t = useTranslations("contact.form");
   const [showSuccess, setShowSuccess] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -40,54 +42,48 @@ export default function ContactForm() {
     <form id="leadForm" onSubmit={handleSubmit}>
       <div className="field-row">
         <div className="field">
-          <label htmlFor="name">Full Name *</label>
+          <label htmlFor="name">{t("nameLabel")}</label>
           <input type="text" id="name" name="name" required />
         </div>
         <div className="field">
-          <label htmlFor="company">Company *</label>
+          <label htmlFor="company">{t("companyLabel")}</label>
           <input type="text" id="company" name="company" required />
         </div>
       </div>
       <div className="field-row">
         <div className="field">
-          <label htmlFor="email">Work Email *</label>
+          <label htmlFor="email">{t("emailLabel")}</label>
           <input type="email" id="email" name="email" required />
         </div>
         <div className="field">
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">{t("phoneLabel")}</label>
           <input type="tel" id="phone" name="phone" />
         </div>
       </div>
       <div className="field-row">
         <div className="field">
-          <label htmlFor="country">Country</label>
-          <input type="text" id="country" name="country" placeholder="Where you're based" />
+          <label htmlFor="country">{t("countryLabel")}</label>
+          <input type="text" id="country" name="country" placeholder={t("countryPlaceholder")} />
         </div>
         <div className="field">
-          <label htmlFor="product">Product / Industry</label>
+          <label htmlFor="product">{t("productLabel")}</label>
           <input type="text" id="product" name="product" />
         </div>
       </div>
       <div className="field">
-        <label htmlFor="message">Message *</label>
+        <label htmlFor="message">{t("messageLabel")}</label>
         <textarea
           id="message"
           name="message"
           required
-          placeholder="Tell us about your product and what you're looking for in the Middle East market."
+          placeholder={t("messagePlaceholder")}
         />
       </div>
       <button type="submit" className="btn btn-primary">
-        Send Message
+        {t("submit")}
       </button>
-      <p className="form-note">
-        This opens your email client with your message pre-filled to
-        info@aldabaran.co.
-      </p>
-      <div className={`form-success${showSuccess ? " show" : ""}`}>
-        Thanks — your email client should now be open with your message ready
-        to send. We typically respond within 1–2 business days.
-      </div>
+      <p className="form-note">{t("note")}</p>
+      <div className={`form-success${showSuccess ? " show" : ""}`}>{t("success")}</div>
     </form>
   );
 }
