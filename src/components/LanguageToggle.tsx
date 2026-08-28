@@ -10,6 +10,16 @@ const LABELS: Record<string, string> = {
   es: "ES",
 };
 
+// Flags are a proxy for language, not a claim about where it's spoken --
+// GB/AE/ES are just the most-recognized convention for EN/AR/ES in language
+// switchers. AE (rather than the more generic SA) since Al Dabaran itself
+// is UAE-based.
+const FLAGS: Record<string, string> = {
+  en: "gb",
+  ar: "ae",
+  es: "es",
+};
+
 export default function LanguageToggle() {
   const locale = useLocale();
   const pathname = usePathname();
@@ -26,6 +36,7 @@ export default function LanguageToggle() {
             aria-current={code === locale ? "true" : undefined}
             onClick={() => router.replace(pathname, { locale: code })}
           >
+            <span className={`fi fi-${FLAGS[code]} lang-toggle-flag`} aria-hidden="true" />
             {LABELS[code]}
           </button>
         </span>

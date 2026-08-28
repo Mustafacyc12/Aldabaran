@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Fraunces, Work_Sans, Space_Mono, Cairo, Noto_Naskh_Arabic } from "next/font/google";
+import "flag-icons/css/flag-icons.min.css";
 import "../globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
